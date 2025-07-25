@@ -25,6 +25,9 @@ def first_hall(SapModel, points, l, h, hm, y=0, name_prefix="Name", column=None,
 
 
 def mid_columns(SapModel, p1, p2, p3, num_divisions, include_p2_column, full_span, y=0, axe=None, axel=None, column=None):
+    
+    """ Aks  arasına kolon ataması yapar """
+    
     if full_span:
         # full span: p1-p3 arası eşit bölünsün, z interpolasyonu segmentlere göre yapılsın
         
@@ -60,6 +63,8 @@ def mid_columns(SapModel, p1, p2, p3, num_divisions, include_p2_column, full_spa
 
 
 def mid_braces(SapModel, all_columns, num_divisions, y1=0, brace_type="X", axe=None, axel=None):
+    """ Orta kolonların arasına çapraz oluşturur"""
+    
     for pt in all_columns:
         x, z_top = pt
         story_points = split_number([x, 0], [x, z_top], num_divisions)
@@ -113,7 +118,7 @@ def vertical_stability(SapModel, axes, axelength, story_heights, x_coords, stabi
                 jValues = [0] * 6
                 SapModel.FrameObj.SetReleases(f"X_{i}_{j}_x{x}_2", iReleases, jReleases, iValues, jValues)
                 
-def roof_braces(SapModel, p1, p2, p3, axe, axel, brace_pattern, maks_length, brace_r=None):
+def roof_braces(SapModel, p1, p2, p3, axe, axel, brace_pattern, maks_length, brace_r=None, stability_r=None):
     seg1 = split_space(p1, p2, maks_length)
     seg2 = split_space(p2, p3, maks_length)
 
