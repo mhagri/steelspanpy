@@ -44,15 +44,3 @@ def generate_roof_points(spoint, l, h, hm):
     p3 = [spoint[0] + l, spoint[1] + h]
     p4 = [spoint[0] + l, spoint[1]]
     return [p0, p1, p2, p3, p4]
-
-
-def section_define(SapModel, type_of_section, section, material):
-    if type_of_section == "I":
-        SapModel.PropFrame.ImportProp(section, material, "ArcelorMittal_Europe.xml", section)
-    elif type_of_section == "CHS":
-        dimentions = section.replace("CHS", "").split("X")
-        SapModel.PropFrame.SetPipe(section, material, float(dimentions[0]), float(dimentions[1]))
-    elif type_of_section == "RHS":
-        dimentions = section.replace("RHS", "").split("X")
-        SapModel.PropFrame.SetTube(section, material, float(dimentions[0]), float(dimentions[1]))        
-    SapModel.FrameObj.SetSection("Name", section)
