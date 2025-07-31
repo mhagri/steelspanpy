@@ -1,6 +1,22 @@
-from utils import interpolate_z
-from utils import split_number
-from utils import split_space
+from .points import interpolate_z
+from .points import split_number
+from .points import split_space
+
+def Grid(SapModel, hm, h, axe, l, axel):
+    # Axes
+    Grid = {"NumberStorys": 2,
+        "TypicalStoryHeight": hm / 1000,
+        "BottomStoryHeight": h / 1000,
+        "NumberLinesX": 3,
+        "NumberLinesY": axe + 1,
+        "SpacingX": l / 2000,
+        "SpacingY": axel / 1000,
+        }
+    
+    # New GridOnly Model
+    SapModel.File.NewGridOnly(Grid["NumberStorys"], Grid["TypicalStoryHeight"], Grid["BottomStoryHeight"],
+                                Grid["NumberLinesX"], Grid["NumberLinesY"], Grid["SpacingX"], Grid["SpacingY"])
+
 
 def first_hall(SapModel, points, l, h, hm, y=0, name_prefix="Name", column=None, beam=None):
     """

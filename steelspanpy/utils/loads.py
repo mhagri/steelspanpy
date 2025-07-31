@@ -1,4 +1,4 @@
-from spectrum import Sae, Saed
+from .spectrum import Sae, Saed
 
 def TCS2018(SapModel, name, sds, sd1, soil, r, d, i, Grid):
     xdir = 'Yes' if name == 'Ex' else 'No'
