@@ -1,4 +1,4 @@
-$ File c:\users\mhaka\steelspanpy\steelspanpy\examples\deneme\deneme.$et saved 31.07.2025 14:34:51
+$ File C:\Users\mhaka\SteelSpanPy\steelspanpy\examples\sondeneme\sondeneme.$et saved 31.07.2025 15:08:07
  
 $ PROGRAM INFORMATION
   PROGRAM  "ETABS"  VERSION "22.5.1"  
@@ -361,7 +361,7 @@ $ TABLE SETS
 $ LOG
   STARTCOMMENTS  
 
-ETABS Ultimate  22.5.1 File saved as c:\users\mhaka\steelspanpy\steelspanpy\examples\deneme\deneme.EDB at 31.07.2025 14:34:51
+ETABS Ultimate  22.5.1 File saved as C:\Users\mhaka\SteelSpanPy\steelspanpy\examples\sondeneme\sondeneme.EDB at 31.07.2025 15:08:07
   ENDCOMMENTS  
 
   END
