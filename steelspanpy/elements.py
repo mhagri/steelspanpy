@@ -101,6 +101,18 @@ def create_all_frames(SapModel, points):
     for i in range(num_axes + 1):
         y = i * axis_spacing
         create_main_frame(SapModel, points, y=y, frame_index=i)
+            # Kolon başı kirişleri: sol ve sağ kolonları Y yönünde bağla
+    
+    for x in [0, span]:
+        for i in range(num_axes):
+            y1   = i * axis_spacing
+            y2   = (i + 1) * axis_spacing
+            name = f"CB_{int(x)}_{i}"
+            SapModel.FrameObj.AddByCoord(
+                x, y1, height,
+                x, y2, height,
+                name, _sec("beam")
+            )
     print(f"  {num_axes + 1} aks için ana çerçeve tamamlandı.")
 
 
