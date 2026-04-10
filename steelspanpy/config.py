@@ -23,15 +23,15 @@ UNITS = 5
 # ==============================================================================
 
 GEOMETRY = {
-    "span"          : 16000,   # mm
-    "height"        : 2700,    # mm
-    "ridge_height"  : 900,     # mm
-    "num_axes"      : 6,       # aks aralık sayısı
-    "axis_spacing"  : 3250,    # mm
+    "span"              : 6000,     # Açıklık (mm)
+    "height"            : 4000,     # Kolon yüksekliği (mm)
+    "ridge_height"      : 1,        # Mahya yüksekliği (mm)
+    "num_axes"          : 1,        # Aks aralık sayısı
+    "axis_spacing"      : 5000,     # Aks genişliği (mm)
 }
 
 # Çatı çaprazı maksimum bölme uzunluğu (mm)
-MAX_BRACE_LENGTH = 1000
+MAX_BRACE_LENGTH = 2500
 
 # Orta kolon ayarları
 MID_COLUMNS = {
@@ -44,9 +44,9 @@ MID_COLUMNS = {
 
 # Düşey çapraz ayarları
 BRACE = {
-    "type"          : "X",
-    "pattern"       : [1, 0, 1, 0, 0, 1],
-    "story_heights" : [0, 2700],   # ← bu önemli! h değeri
+    "type"              : "X",              # X, V veya K
+    "pattern"           : [1, 0, 0, 1, 0, 0, 1],  # 1:çapraz var, 0:yok
+    "story_heights"     : [0],              # Çapraz için kat yükseklikleri
 }
 
 
@@ -103,4 +103,34 @@ SEISMIC = {
     "Ry"    : 5,        # Y yönü taşıyıcı sistem katsayısı
     "Dy"    : 2,        # Y yönü dayanım fazlalığı katsayısı
     "I"     : 1,        # Bina önem katsayısı
+}
+
+
+# ==============================================================================
+# 6. RÜZGAR (EN 1991-1-4 + Türkiye NA)
+# ==============================================================================
+
+WIND = {
+    # Temel rüzgar hızı parametreleri
+    "vb0"      : 27.0,   # Bölgesel temel rüzgar hızı (m/s) — kullanıcı girer
+    "c_dir"    : 1.0,    # Yön faktörü (Türkiye NA: 1.0)
+    "c_season" : 1.0,    # Mevsim faktörü (Türkiye NA: 1.0)
+    "c_alt"    : 1.0,    # Yükseklik faktörü (Türkiye NA: 1.0)
+
+    # Arazi kategorisi
+    # "0": Açık deniz, "I": Göl/düz, "II": Kırsal, "III": Yerleşim, "IV": Kent
+    "terrain"  : "II",
+
+    # Topoğrafya faktörü (düz arazi: 1.0)
+    "c0"       : 1.0,
+
+    # Türbülans faktörü (Türkiye NA: 1.0)
+    "kI"       : 1.0,
+
+    # Hava yoğunluğu (kg/m³) — standart: 1.25
+    "rho"      : 1.25,
+
+    # İç basınç katsayısı (EN 1991-1-4 Mad. 7.2.9)
+    # Elverişsiz durum: +0.2 veya -0.3
+    "cpi"      : -0.3,
 }
