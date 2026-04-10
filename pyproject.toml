@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "steelspanpy"
+version = "0.1.0"
+description = "Automatic steel industrial building model generator for ETABS"
+requires-python = ">=3.8"
+dependencies = [
+    "numpy",
+    "comtypes",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
