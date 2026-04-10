@@ -1,6 +1,6 @@
 from .spectrum import Sae, Saed
 
-def TCS2018(SapModel, name, sds, sd1, soil, r, d, i, Grid):
+def TCS2018(SapModel, name, sds, sd1, soil, r, d, i, Grid): 
     xdir = 'Yes' if name == 'Ex' else 'No'
     ydir = 'Yes' if name == 'Ey' else 'No'
 
