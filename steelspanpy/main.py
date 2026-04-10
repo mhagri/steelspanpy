@@ -97,7 +97,7 @@ def main():
     create_all_vertical_stability(SapModel, BRACE["story_heights"])
 
     # Çatı çaprazları
-    create_roof_braces(SapModel, p1, p2, p3)
+    create_roof_braces(SapModel, p1, p2, p3, mid_col_points)
 
     # ------------------------------------------------------------------
     # 8. ANALİZ VE KAYDET
