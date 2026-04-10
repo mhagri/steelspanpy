@@ -31,7 +31,7 @@ GEOMETRY = {
 }
 
 # Çatı çaprazı maksimum bölme uzunluğu (mm)
-MAX_BRACE_LENGTH = 2500
+MAX_BRACE_LENGTH = 1000
 
 # Orta kolon ayarları
 MID_COLUMNS = {
