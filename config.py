@@ -23,10 +23,10 @@ UNITS = 5
 # ==============================================================================
 
 GEOMETRY = {
-    "span"              : 6000,     # Açıklık (mm)
+    "span"              : 16000,     # Açıklık (mm)
     "height"            : 4000,     # Kolon yüksekliği (mm)
-    "ridge_height"      : 1,        # Mahya yüksekliği (mm)
-    "num_axes"          : 1,        # Aks aralık sayısı
+    "ridge_height"      : 500,        # Mahya yüksekliği (mm)
+    "num_axes"          : 9,        # Aks aralık sayısı
     "axis_spacing"      : 5000,     # Aks genişliği (mm)
 }
 
