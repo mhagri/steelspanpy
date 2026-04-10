@@ -373,8 +373,8 @@ def create_roof_braces(SapModel, p1, p2, p3, mid_col_points=None):
     right_cols = sorted([pt for pt in (mid_col_points or []) if pt[0] > p2[0]], key=lambda pt: pt[0])
 
     # Segmentleri orta kolonları da kapsayacak şekilde oluştur
-    seg1 = [p1] + left_cols + [p2]
-    seg2 = [p2] + right_cols + [p3]
+    seg1 = _build_roof_seg(p1, left_cols, p2, max_len)
+    seg2 = _build_roof_seg(p2, right_cols, p3, max_len)
 
     print("Çatı çaprazları oluşturuluyor...")
     for i in range(num_axes):
