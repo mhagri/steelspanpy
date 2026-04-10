@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ortam dosyaları (API key vb. gizli bilgiler)
+.env
+*.env
+
+# ETABS model dosyaları (büyük boyutlu)
+*.edb
+*.edb.bak
+
+# Spyder IDE
+.spyproject/
+
+# VS Code
+.vscode/
+
+# Dağıtım
+dist/
+build/
+*.egg-info/
