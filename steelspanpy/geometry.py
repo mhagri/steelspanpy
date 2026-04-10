@@ -99,7 +99,7 @@ def generate_roof_points(spoint=None, span=None, height=None, ridge_height=None)
     Döndürür:
         list: [p0, p1, p2, p3, p4]
     """
-    from config import SPOINT
+    from .config import SPOINT
 
     sp  = spoint       if spoint       is not None else SPOINT
     l   = span         if span         is not None else GEOMETRY["span"]
