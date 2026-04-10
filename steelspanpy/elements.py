@@ -350,7 +350,7 @@ def create_all_vertical_stability(SapModel, story_heights):
 # ÇATI ÇAPRAZLARI
 # ==============================================================================
 
-def create_roof_braces(SapModel, p1, p2, p3):
+def create_roof_braces(SapModel, p1, p2, p3, mid_col_points=None):
     """
     Çatı çaprazlarını ve stabilite elemanlarını oluşturur.
     Çapraz örüntüsüne göre X çapraz veya uç+stabilite kombinasyonu kullanılır.
@@ -368,8 +368,13 @@ def create_roof_braces(SapModel, p1, p2, p3):
     pattern      = BRACE["pattern"]
     max_len      = MAX_BRACE_LENGTH
 
-    seg1 = split_space(p1, p2, max_len)
-    seg2 = split_space(p2, p3, max_len)
+# Orta kolon noktalarını sol ve sağ olarak ayır
+    left_cols  = sorted([pt for pt in (mid_col_points or []) if pt[0] < p2[0]], key=lambda pt: pt[0])
+    right_cols = sorted([pt for pt in (mid_col_points or []) if pt[0] > p2[0]], key=lambda pt: pt[0])
+
+    # Segmentleri orta kolonları da kapsayacak şekilde oluştur
+    seg1 = [p1] + left_cols + [p2]
+    seg2 = [p2] + right_cols + [p3]
 
     print("Çatı çaprazları oluşturuluyor...")
     for i in range(num_axes):
