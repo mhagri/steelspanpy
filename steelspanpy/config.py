@@ -23,11 +23,11 @@ UNITS = 5
 # ==============================================================================
 
 GEOMETRY = {
-    "span"              : 6000,     # Açıklık (mm)
-    "height"            : 4000,     # Kolon yüksekliği (mm)
-    "ridge_height"      : 1,        # Mahya yüksekliği (mm)
-    "num_axes"          : 1,        # Aks aralık sayısı
-    "axis_spacing"      : 5000,     # Aks genişliği (mm)
+    "span"          : 16000,   # mm
+    "height"        : 2700,    # mm
+    "ridge_height"  : 900,     # mm
+    "num_axes"      : 6,       # aks aralık sayısı
+    "axis_spacing"  : 3250,    # mm
 }
 
 # Çatı çaprazı maksimum bölme uzunluğu (mm)
@@ -44,9 +44,9 @@ MID_COLUMNS = {
 
 # Düşey çapraz ayarları
 BRACE = {
-    "type"              : "X",              # X, V veya K
-    "pattern"           : [1, 0, 0, 1, 0, 0, 1],  # 1:çapraz var, 0:yok
-    "story_heights"     : [0],              # Çapraz için kat yükseklikleri
+    "type"          : "X",
+    "pattern"       : [1, 0, 1, 0, 0, 1],
+    "story_heights" : [0, 2700],   # ← bu önemli! h değeri
 }
 
 
