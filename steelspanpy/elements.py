@@ -96,6 +96,8 @@ def create_all_frames(SapModel, points):
     """
     num_axes   = GEOMETRY["num_axes"]
     axis_spacing = GEOMETRY["axis_spacing"]
+    height       = GEOMETRY["height"]
+    span         = GEOMETRY["span"]
 
     print("Ana çerçeveler oluşturuluyor...")
     for i in range(num_axes + 1):
