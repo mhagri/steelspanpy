@@ -6,8 +6,8 @@ Yapısal elemanların ETABS'a eklenmesi.
 Kolon, kiriş, düşey çapraz, stabilite ve çatı çaprazı fonksiyonları burada tanımlanır.
 """
 
-from config import GEOMETRY, SECTIONS, LOADS, BRACE, MID_COLUMNS
-from geometry import split_number, split_space, interpolate_z, get_mid_column_points
+from .config import GEOMETRY, SECTIONS, LOADS, BRACE, MID_COLUMNS
+from .geometry import split_number, split_space, interpolate_z, get_mid_column_points
 
 
 # ==============================================================================

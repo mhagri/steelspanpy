@@ -6,7 +6,7 @@ Yük desenleri, yük kombinasyonları ve kütle kaynağı tanımlama işlemleri.
 TBDY 2018 yük kombinasyonları esas alınmıştır.
 """
 
-from config import LOAD_PATTERNS
+from .config import LOAD_PATTERNS
 
 
 # ==============================================================================

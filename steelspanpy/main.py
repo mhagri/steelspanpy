@@ -9,16 +9,16 @@ Kullanım:
     python main.py
 """
 
-from config import GEOMETRY, UNITS, BRACE, MID_COLUMNS
-from geometry import generate_roof_points, get_grid_config
-from sections import define_materials, define_all_sections
-from loads import setup_load_patterns, setup_mass_source, setup_all_combinations
-from seismic import (define_all_seismic_loads, define_response_spectra,
+from .config import GEOMETRY, UNITS, BRACE, MID_COLUMNS
+from .geometry import generate_roof_points, get_grid_config
+from .sections import define_materials, define_all_sections
+from .loads import setup_load_patterns, setup_mass_source, setup_all_combinations
+from .seismic import (define_all_seismic_loads, define_response_spectra,
                      define_response_spectrum_cases)
-from elements import (create_all_frames, create_mid_columns,
+from .elements import (create_all_frames, create_mid_columns,
                       create_all_vertical_braces, create_all_mid_braces,
                       create_all_vertical_stability, create_roof_braces)
-from etabs_connect import (setup_model_path, connect_to_etabs,
+from .etabs_connect import (setup_model_path, connect_to_etabs,
                             initialize_model, run_and_save)
 
 

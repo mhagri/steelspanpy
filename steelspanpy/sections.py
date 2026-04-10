@@ -6,7 +6,7 @@ Kesit ve malzeme tanımlama işlemleri.
 ETABS'a profil ve malzeme eklemek için kullanılan fonksiyonlar burada tanımlanır.
 """
 
-from config import SECTIONS, STEEL_MATERIALS
+from .config import SECTIONS, STEEL_MATERIALS
 
 
 # ==============================================================================

@@ -6,7 +6,7 @@ geometry.py
 Nokta üretme, bölme ve çatı koordinatı hesaplama işlemleri burada yapılır.
 """
 
-from config import GEOMETRY, MID_COLUMNS
+from .config import GEOMETRY, MID_COLUMNS
 
 
 # ==============================================================================

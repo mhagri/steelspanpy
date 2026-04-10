@@ -7,7 +7,7 @@ TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) esas alınmıştır.
 """
 
 import numpy as np
-from config import SEISMIC
+from .config import SEISMIC
 
 
 # ==============================================================================
