@@ -16,14 +16,8 @@ import comtypes.client
 
 def setup_model_path(filename=None):
     """
-    Model dosyasının kaydedileceği yolu oluşturur.
+    Model dosyasının kaydedileceği yolu kullanıcıdan alır.
     Klasör yoksa otomatik oluşturur.
-
-    Parametreler:
-        filename : Dosya adı. None ise kullanıcıdan alınır.
-
-    Döndürür:
-        str: Tam dosya yolu → örn. "C:/Users/.../Desktop/bina1/bina1.edb"
     """
     if filename is None:
         filename = input("Dosya adı girin: ").strip()
@@ -31,10 +25,23 @@ def setup_model_path(filename=None):
             print("Hata: Dosya adı boş olamaz.")
             sys.exit(-1)
 
-    desktop  = os.path.join(os.path.expanduser("~"), "Desktop")
-    model_dir = os.path.join(desktop, filename)
+    # Kayıt klasörünü sor
+    print(f"\nModel '{filename}.edb' olarak kaydedilecek.")
+    save_dir = input("Kayıt klasörünü girin (boş bırakırsanız masaüstü kullanılır): ").strip()
 
-    # Klasörü oluştur
+    if not save_dir:
+        # Masaüstünü otomatik bul
+        home = os.path.expanduser("~")
+        candidates = [
+            os.path.join(home, "OneDrive", "Masaüstü"),
+            os.path.join(home, "OneDrive", "Desktop"),
+            os.path.join(home, "Desktop"),
+            os.path.join(home, "Masaüstü"),
+        ]
+        save_dir = next((p for p in candidates if os.path.exists(p)), home)
+
+    model_dir = os.path.join(save_dir, filename)
+
     if not os.path.exists(model_dir):
         try:
             os.makedirs(model_dir)
