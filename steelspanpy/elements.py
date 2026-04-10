@@ -347,7 +347,7 @@ def create_roof_braces(SapModel, p1, p2, p3):
         p2       : Mahya noktası [x, z]
         p3       : Sağ kolon tepesi [x, z]
     """
-    from config import MAX_BRACE_LENGTH
+    from .config import MAX_BRACE_LENGTH
 
     num_axes     = GEOMETRY["num_axes"]
     axis_spacing = GEOMETRY["axis_spacing"]
