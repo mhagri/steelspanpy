@@ -404,7 +404,17 @@ def create_roof_braces(SapModel, p1, p2, p3, mid_col_points=None):
 
     print("  Çatı çaprazları tamamlandı.")
 
-
+def _build_roof_seg(start, waypoints, end, max_len):
+    all_points = [start] + waypoints + [end]
+    result = []
+    for i in range(len(all_points) - 1):
+        a = all_points[i]
+        b = all_points[i + 1]
+        sub = split_space(a, b, max_len)
+        result += sub[:-1]
+    result.append(all_points[-1])
+    return result
+    
 def _add_end_braces_and_stability(SapModel, seg, i, y1, y2, side):
     """
     Bir çatı segmentinin başına ve sonuna X çapraz,
